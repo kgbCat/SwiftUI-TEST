@@ -32,6 +32,7 @@ struct MainView: View {
 }
 
 extension MainView {
+    //MARK:-TabView
     var tabView: some View {
         TabView {
                 FriendsView()

@@ -15,7 +15,6 @@ struct Cell: ViewModifier {
             .background(Color(.systemGray6))
 //            .clipShape(RoundedRectangle(cornerRadius: 10))
 //            .padding(.leading)
-//            .padding(.trailing)
 
     }
 }
