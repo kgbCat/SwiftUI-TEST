@@ -8,27 +8,31 @@
 import SwiftUI
 
 struct GroupCellPrototype: View {
+
+    var group: VkGroup
+
     var body: some View {
 
-        HStack(alignment: .center) {
-            Image("лава")
+        HStack {
+            Image(group.photo)
                 .resizable()
                 .groupPhotoStyle()
 
             VStack(alignment: .leading) {
-                Text("Kamchatka")
+                Text(group.name)
                 .groupTitleStyle()
-                Text("Adventures")
+                Text(group.message)
                 .groupSubtitleStyle()
             }
+            Spacer()
         }
-        .cellStyle()
+//        .frame(width: .infinity, height: 80, alignment: .leading)
     }
 }
 
 struct GroupCellPrototype_Previews: PreviewProvider {
     static var previews: some View {
-        GroupCellPrototype()
+        GroupCellPrototype(group: VkGroup(id: 0, name: "hg", photo: "лава", message: "jhg"))
     }
 }
 extension View {

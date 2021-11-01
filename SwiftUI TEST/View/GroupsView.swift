@@ -8,28 +8,38 @@
 import SwiftUI
 
 struct GroupsView: View {
+
+    @State private var groups: [VkGroup] = [
+        VkGroup(id: 0, name:"Kamchatka", photo: "лава", message: "Adventure"),
+        VkGroup(id: 1, name:"Kamchatka", photo: "лава", message: "Adventure"),
+    ]
+
     var body: some View {
-        NavigationView {
+
+        UITableView.appearance().backgroundColor = .clear
+        UITableViewCell.appearance().backgroundColor = .clear
+
+
+        return NavigationView {
             ZStack {
-                Color.init(.systemGray6)
-                    .edgesIgnoringSafeArea(.all)
-                ScrollView {
-                    Divider()
-                    VStack {
-                        GroupCellPrototype()
-                    }
+                List(groups) {group in
+                    GroupCellPrototype(group: group)
+
                 }
             }
             .navigationBarTitle("List of my Groups")
             .navigationBarItems(trailing:
-            Button(action: {
-
-            }) {
-                Text("Explore New Groups").foregroundColor(.gray).imageScale(.large)
-                Image(systemName: "chevron.right.circle.fill")
-                    .accentColor(.gray)
-        })
-
+                                    NavigationLink(
+                                        destination: SearchGroupsView(),
+                                        label: {
+                                            Text("Explore New Groups")
+                                                .foregroundColor(.gray)
+                                                .imageScale(.large)
+                                            Image(systemName: "chevron.right.circle.fill")
+                                                .accentColor(Color(.systemTeal))
+                                        }
+                                    )
+           )
         }
     }
 }
@@ -39,3 +49,4 @@ struct GroupsView_Previews: PreviewProvider {
         GroupsView()
     }
 }
+

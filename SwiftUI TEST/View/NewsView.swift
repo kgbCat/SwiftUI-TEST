@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct NewsView: View {
+
     var body: some View {
 
         NavigationView {
             ZStack {
-                Color.init(.systemGray6)
-                .edgesIgnoringSafeArea(.all)
                 ScrollView {
                     Divider()
                     Spacer()

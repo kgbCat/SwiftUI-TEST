@@ -8,24 +8,43 @@
 import SwiftUI
 
 struct FriendsView: View {
+
+    @StateObject var friendsModel = FriendsModel()
+    @State var searchTerm = ""
+
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color.init(.systemGray6)
-                    .edgesIgnoringSafeArea(.all)
-                ScrollView {
-                    Divider()
-                    VStack {
-                        Spacer()
-                        NavigationLink(
-                            destination: GalleryView(),
-                            label: {
-                                UserCellPrototype()
-                            })
+
+        UITableView.appearance().backgroundColor = .clear
+        UITableViewCell.appearance().backgroundColor = .clear
+
+        return NavigationView {
+            VStack{
+                SearchBar(searchTerm: $searchTerm)
+                List {
+                    ForEach(friendsModel.sectionDictionary.keys.sorted(), id:\.self) { key in
+                        if let friends = friendsModel.sectionDictionary[key]!.filter({ (friend) -> Bool in
+                                                                                        self.searchTerm.isEmpty ? true :
+                                                                                            "\(friend)".lowercased().contains(self.searchTerm.lowercased())}), !friends.isEmpty
+                        {
+                            Section(header: Text("\(key)")) {
+                                ForEach(friends){ friend in
+                                        ZStack {
+                                            NavigationLink(
+                                                destination: GalleryView(friend: friend)){
+                                                EmptyView()
+                                            }
+                                            .opacity(0)  // to hide a disclosure indicator
+                                            UserCellPrototype(friend: friend)
+//                                    Text("\(friend.firstName) \(friend.lastName)")
+                                }
+                            }
+                        }
                     }
-                }
-            }
-            .navigationTitle("List of my Friends")
+                }.listStyle(GroupedListStyle())
+                }.accentColor(.black)
+
+            }.navigationTitle("List of my Friends")
+
         }
     }
 }

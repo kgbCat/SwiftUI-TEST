@@ -10,6 +10,10 @@ import SwiftUI
 struct MainView: View {
 
     @State var shouldShowMainView:Bool = false
+// set NavBarTitle color 
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))]
+    }
 
     var body: some View {
 
@@ -23,7 +27,6 @@ struct MainView: View {
                     EmptyView()
                 }
             }
-
         }
     }
 }
@@ -61,6 +64,8 @@ extension MainView {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
+            MainView()
+            MainView()
             MainView()
         }
     }

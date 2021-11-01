@@ -29,7 +29,7 @@ struct LoginView: View {
     var body: some View {
 
         ZStack {
-            Color(.white)
+            Color(#colorLiteral(red: 0.9901960784, green: 1, blue: 1, alpha: 1))
             ScrollView() {
                 VStack {
                     // MARK: - Logo
@@ -64,7 +64,8 @@ struct LoginView: View {
                             .foregroundColor(.white)
                     }
                     .frame(width: 100, height: 30, alignment: .center)
-                    .background(Color.blue.opacity(0.7))
+                    .background(Color(#colorLiteral(red: 0.1131605046, green: 0.6958755514, blue: 0.8452040547, alpha: 1))
+                                    .opacity(0.8))
                     .disabled(login.isEmpty || password.isEmpty)
                     .cornerRadius(15)
 
@@ -78,7 +79,8 @@ struct LoginView: View {
 
                     }
                     .frame(width: 100, height: 30, alignment: .center)
-                    .background(Color.gray.opacity(0.7))
+                    .background(Color.gray
+                                    .opacity(1))
                     .cornerRadius(15)
 
                 }
@@ -101,7 +103,8 @@ struct LoginView: View {
                             .foregroundColor(.white)
                     }
                     .frame(width: 250, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .background(Color.blue.opacity(0.7))
+                    .background(Color(#colorLiteral(red: 0.1131605046, green: 0.6958755514, blue: 0.8452040547, alpha: 1))
+                                    .opacity(0.9))
                     .cornerRadius(15)
                 }
                 .onReceive(keyboardIsOnPublisher) { isKeyboardOn in

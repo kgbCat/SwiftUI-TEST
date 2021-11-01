@@ -8,22 +8,23 @@
 import SwiftUI
 
 struct GalleryCollectionViewCellPrototype: View {
-    var photoName: String = "Me"
+
+    var photo: String
 
     var body: some View {
         HStack {
-            Image(photoName)
+            Image(photo)
                 .resizable()
-                .frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .cornerRadius(15)
                 .aspectRatio(contentMode: .fill)
-
+                .frame(width: 300, height: 300, alignment: .center)
         }
+        .frame(width: 300, height: 300, alignment: .center)
+        .cornerRadius(10)
     }
 }
 
 struct GalleryCollectionViewCellPrototype_Previews: PreviewProvider {
     static var previews: some View {
-        GalleryCollectionViewCellPrototype(photoName: "")
+        GalleryCollectionViewCellPrototype(photo: "")
     }
 }

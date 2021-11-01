@@ -8,30 +8,39 @@
 import SwiftUI
 
 struct NewsCellPrototype: View {
+
     var body: some View {
 
 
         VStack {
-            UserCellPrototype()
+            HStack {
+                Image("Me")
+                    .resizable()
+                    .modifier(Photo())
+                Text("Anna Delova")
+                    .foregroundColor(.black)
+            }
+            .frame(minWidth: 0, idealWidth: 250, maxWidth: 360, minHeight: 0, idealHeight: 80,
+                   maxHeight: 80, alignment: .leading)
+            .background(Color(.systemGray6))
+            .cornerRadius(30)
             Image(systemName: "pencil")
                 .resizable()
-                .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .aspectRatio(contentMode: .fit)
+                .frame(minWidth: 0, idealWidth: 250, maxWidth: 360, minHeight: 0, idealHeight: 250,
+                       maxHeight: 250, alignment: .center)
             Text("В беседах появилась возможность собирать деньги на совместные покупки: делайте подарки друзьям, начинайте общее дело или копите на вечеринку")
-//                .frame(width: .infinity, height: .infinity, alignment: .leading)
-                .modifier(Cell())
                 .modifier(SubTitle(color: .black))
+                .frame(minWidth: 0, idealWidth: 250, maxWidth: 360, minHeight: 0, idealHeight: 150,
+                       maxHeight: 150, alignment: .center)
 
             HStack {
                 Image(systemName: "heart")
+                    .foregroundColor(.red)
                 Image(systemName: "arrow.right")
+                    .foregroundColor(.gray)
             }
-
         }
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
-        .background(Color(.systemGray6))
-        .clipShape(RoundedRectangle(cornerRadius: 10))
-        .padding(.leading)
-        .padding(.trailing)
 
     }
 }

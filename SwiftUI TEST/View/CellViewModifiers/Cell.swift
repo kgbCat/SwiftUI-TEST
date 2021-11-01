@@ -13,9 +13,9 @@ struct Cell: ViewModifier {
         content
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 80, alignment: .leading)
             .background(Color(.systemGray6))
-            .clipShape(RoundedRectangle(cornerRadius: 10))
-            .padding(.leading)
-            .padding(.trailing)
+//            .clipShape(RoundedRectangle(cornerRadius: 10))
+//            .padding(.leading)
+//            .padding(.trailing)
 
     }
 }

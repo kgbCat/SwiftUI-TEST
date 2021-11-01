@@ -8,29 +8,33 @@
 import SwiftUI
 
 struct UserCellPrototype: View {
+
+    var friend: Friend
+
     var body: some View {
 
-        HStack(alignment: .center) {
-            Image("Me")
+        HStack {
+            Image(friend.photo)
                 .resizable()
                 .photoStyle()
 
             VStack(alignment: .leading) {
-                Text("Anna Delova")
+                Text(friend.fullName)
                     .titleStyle()
-                Text("Всем доброго понедельника!")
+                Text(friend.message)
                     .subtitleStyle()
             }
+            Spacer()
             goToGalleryViewButton()
-
         }
-        .cellStyle()
+//        .frame(width: .infinity, height: 80, alignment: .leading)
+//        .background(Color(.systemGray6))
     }
 }
 
 struct UserCellPrototype_Previews: PreviewProvider {
     static var previews: some View {
-        UserCellPrototype()
+        UserCellPrototype(friend: Friend(id: 0, firstName: "f", lastName: "f", photo: "Me", message: "d"))
     }
 }
 
