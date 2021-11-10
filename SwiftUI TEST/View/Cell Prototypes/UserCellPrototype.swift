@@ -14,18 +14,20 @@ struct UserCellPrototype: View {
     var body: some View {
 
         HStack {
-            Image(friend.photo)
+            KingfisferImageView(url: friend.photo_200_orig)
                 .resizable()
                 .photoStyle()
 
             VStack(alignment: .leading) {
                 Text(friend.fullName)
                     .titleStyle()
-                Text(friend.message)
+                Text(friend.first_name)
                     .subtitleStyle()
             }
             Spacer()
             goToGalleryViewButton()
+
+                
         }
 //        .frame(width: .infinity, height: 80, alignment: .leading)
 //        .background(Color(.systemGray6))
@@ -34,7 +36,7 @@ struct UserCellPrototype: View {
 
 struct UserCellPrototype_Previews: PreviewProvider {
     static var previews: some View {
-        UserCellPrototype(friend: Friend(id: 0, firstName: "f", lastName: "f", photo: "Me", message: "d"))
+        UserCellPrototype(friend: Friend(id: 0, first_name: "", last_name: "", photo_200_orig: ""))
     }
 }
 

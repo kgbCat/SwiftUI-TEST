@@ -9,15 +9,17 @@ import SwiftUI
 
 struct NewsCellPrototype: View {
 
+//    var item: VkItem
+    var profile: VkProfile
+
     var body: some View {
 
 
         VStack {
             HStack {
-                Image("Me")
-                    .resizable()
+                KingfisferImageView(url: profile.photo100)           .resizable()
                     .modifier(Photo())
-                Text("Anna Delova")
+                Text(profile.fullName)
                     .foregroundColor(.black)
             }
             .frame(minWidth: 0, idealWidth: 250, maxWidth: 360, minHeight: 0, idealHeight: 80,
@@ -25,11 +27,12 @@ struct NewsCellPrototype: View {
             .background(Color(.systemGray6))
             .cornerRadius(30)
             Image(systemName: "pencil")
+//            KingfisferImageView(url: sizes.url)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(minWidth: 0, idealWidth: 250, maxWidth: 360, minHeight: 0, idealHeight: 250,
                        maxHeight: 250, alignment: .center)
-            Text("В беседах появилась возможность собирать деньги на совместные покупки: делайте подарки друзьям, начинайте общее дело или копите на вечеринку")
+            Text(profile.firstName)
                 .modifier(SubTitle(color: .black))
                 .frame(minWidth: 0, idealWidth: 250, maxWidth: 360, minHeight: 0, idealHeight: 150,
                        maxHeight: 150, alignment: .center)
@@ -47,6 +50,8 @@ struct NewsCellPrototype: View {
 
 struct NewsCellPrototype_Previews: PreviewProvider {
     static var previews: some View {
-        NewsCellPrototype()
+//        NewsCellPrototype(item: VkItem(id: 0, date: 0, text: "", likes: 0, attachments: Attachments(photo: NewsPhoto(id: 0, sizes: Sizes(url: "", type: "m")))), profile: VkProfile(firstName: "", lastName: "", id: 0, photo50: ""))
+
+        NewsCellPrototype(profile: VkProfile(firstName: "", lastName: "", id: 0, photo100: ""))
     }
 }

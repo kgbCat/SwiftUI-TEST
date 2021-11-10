@@ -12,7 +12,6 @@ import Combine
 struct LoginView: View {
     //MARK:- Variables
     @Binding var shouldShowMainView: Bool
-
     @State private var login =  ""
     @State private var password =  ""
     @State private var shouldShowLogo: Bool = true

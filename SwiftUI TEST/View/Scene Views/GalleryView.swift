@@ -16,9 +16,8 @@ struct GalleryView: View {
             ScrollView(.horizontal) {
                 HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10)
                 {
-                    GalleryCollectionViewCellPrototype(photo: friend.photo)
+                    GalleryCollectionViewCellPrototype(photo: friend.photo_200_orig)
                     }
-
             }
             .navigationBarTitle("Photo Gallery", displayMode: .inline)
             }
@@ -27,6 +26,6 @@ struct GalleryView: View {
 
 struct GalleryView_Previews: PreviewProvider {
     static var previews: some View {
-        GalleryView(friend: Friend(id: 0, firstName: "", lastName: "", photo: "", message: ""))
+        GalleryView(friend: Friend(id: 0, first_name: "", last_name: "", photo_200_orig: "") )
     }
 }

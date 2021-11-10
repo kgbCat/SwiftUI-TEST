@@ -9,20 +9,19 @@ import SwiftUI
 
 struct GroupCellPrototype: View {
 
-    var group: VkGroup
+    var group: MyVkGroup
 
     var body: some View {
 
         HStack {
-            Image(group.photo)
-                .resizable()
+            KingfisferImageView(url: group.photo_200)               .resizable()
                 .groupPhotoStyle()
 
             VStack(alignment: .leading) {
                 Text(group.name)
-                .groupTitleStyle()
-                Text(group.message)
-                .groupSubtitleStyle()
+                    .groupTitleStyle()
+                Text(group.name)
+                    .groupSubtitleStyle()
             }
             Spacer()
         }
@@ -32,7 +31,7 @@ struct GroupCellPrototype: View {
 
 struct GroupCellPrototype_Previews: PreviewProvider {
     static var previews: some View {
-        GroupCellPrototype(group: VkGroup(id: 0, name: "hg", photo: "лава", message: "jhg"))
+        GroupCellPrototype(group: MyVkGroup(id: 0, name: "", photo_200: ""))
     }
 }
 extension View {
