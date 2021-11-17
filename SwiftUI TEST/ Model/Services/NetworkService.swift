@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Alamofire
 import SwiftyJSON
 
 protocol VkNetworkRequestsInterface {
@@ -92,10 +91,36 @@ class NetworkService: VkNetworkRequestsInterface  {
         } .resume()
     }
 
+    func getPhotos(userID:Int, completion: @escaping ([AlbumPhoto]?) -> Void) {
+        urlComponents.path = "/method/photos.getAll"
+        urlComponents.queryItems?.append(contentsOf: [
+            URLQueryItem(name: "extended", value: "1"),
+            URLQueryItem(name: "photo_sizes", value: "1"),
+            URLQueryItem(name: "owner_id", value: "\(userID)"),
+                ])
+        guard let url = urlComponents.url else { return }
+
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else { return }
+
+            do {
+                let json = try JSON(data)
+                let itemsJson = json["response"]["items"].arrayValue
+                let photos = itemsJson.compactMap{ AlbumPhoto($0) }
+
+                DispatchQueue.main.async {
+                    completion(photos)
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        } .resume()
+    }
+
     func getNews(completion: @escaping ([VkItem]?, [VkProfile]?) -> Void) {
         urlComponents.path = "/method/\(NetworkPaths.getNews)"
         urlComponents.queryItems?.append(contentsOf: [
-            URLQueryItem(name: "filter", value: "post"),
+            URLQueryItem(name: "filters", value: "post"),
             URLQueryItem(name: "count", value: "3"),
         ])
 
@@ -103,19 +128,23 @@ class NetworkService: VkNetworkRequestsInterface  {
 
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
+
             do {
-                let result = try JSONDecoder().decode(NewsResponse.self, from: data)
-                for item in result.vKresponse.items {
-                    print(item.id)
-                }
+                let json = try JSON(data)
+                let itemsJson = json["response"]["items"].arrayValue
+                let vkItems = itemsJson.compactMap{ VkItem($0) }
+                let profileJson = json["response"]["profiles"].arrayValue
+                let vkProfiles = profileJson.compactMap{ VkProfile($0) }
+                
                 DispatchQueue.main.async {
-                    completion(result.vKresponse.items, result.vKresponse.profiles)
+                    completion(vkItems, vkProfiles)
                 }
             } catch {
                 print(error.localizedDescription)
             }
         } .resume()
     }
+    
 }
 
 

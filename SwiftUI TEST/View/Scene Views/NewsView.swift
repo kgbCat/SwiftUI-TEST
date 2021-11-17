@@ -12,6 +12,8 @@ struct NewsView: View {
     @State var newsItems: [VkItem] = []
     @State var newsProfiles: [VkProfile] = []
 
+//    @ObservedObject var viewModel: FriendsModel
+
     var body: some View {
         
         NavigationView {
