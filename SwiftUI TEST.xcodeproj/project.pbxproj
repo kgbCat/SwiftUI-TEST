@@ -12,6 +12,7 @@
 		0A4FE3CA27349F1B00FB4FEA /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FE3C927349F1B00FB4FEA /* TabBarView.swift */; };
 		0A4FE3D32734AD6400FB4FEA /* VkLoginWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FE3D22734AD6400FB4FEA /* VkLoginWebView.swift */; };
 		0A4FE408273621FB00FB4FEA /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4FE407273621FB00FB4FEA /* WebViewModel.swift */; };
+		0AD1F4C8274380D200DD0789 /* VkPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD1F4C7274380D200DD0789 /* VkPhoto.swift */; };
 		0AE0A6A027394B7900EFE32B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE0A69F27394B7900EFE32B /* NetworkService.swift */; };
 		0AE0A6A827394E7C00EFE32B /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE0A6A727394E7C00EFE32B /* Friend.swift */; };
 		0AE0A6AB27394F0F00EFE32B /* MyVkGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE0A6AA27394F0F00EFE32B /* MyVkGroup.swift */; };
@@ -20,6 +21,11 @@
 		0AE0A6C6273A432900EFE32B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0AE0A6C5273A432900EFE32B /* Kingfisher */; };
 		0AE0A6C9273A488000EFE32B /* Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE0A6C8273A488000EFE32B /* Kingfisher.swift */; };
 		0AE0A6CC273A5EAD00EFE32B /* VkNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE0A6CB273A5EAD00EFE32B /* VkNews.swift */; };
+		0AE0A6D6273FAF9600EFE32B /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 0AE0A6D5273FAF9600EFE32B /* SwiftyJSON */; };
+		0AE0A6DA27408C4B00EFE32B /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE0A6D927408C4B00EFE32B /* NewsViewModel.swift */; };
+		0AE7819227446F3C007000D7 /* LIkeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE7819127446F3C007000D7 /* LIkeButton.swift */; };
+		0AE7819D2744B093007000D7 /* QGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 0AE7819C2744B093007000D7 /* QGrid */; };
+		0AE7819F2744C1C9007000D7 /* Bounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE7819E2744C1C9007000D7 /* Bounce.swift */; };
 		0AFBE489272E45D30091E61B /* SwiftUI_TESTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBE488272E45D30091E61B /* SwiftUI_TESTApp.swift */; };
 		0AFBE48B272E45D30091E61B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBE48A272E45D30091E61B /* MainView.swift */; };
 		0AFBE48D272E45DA0091E61B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AFBE48C272E45DA0091E61B /* Assets.xcassets */; };
@@ -40,12 +46,26 @@
 		0AFBE4C4272E48300091E61B /* GalleryCollectionViewCellPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBE4C3272E48300091E61B /* GalleryCollectionViewCellPrototype.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0AE7819A2744ADE7007000D7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0A4932DA272FECC300390D09 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		0A4932DD272FEE2000390D09 /* FriendsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsModel.swift; sourceTree = "<group>"; };
 		0A4FE3C927349F1B00FB4FEA /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		0A4FE3D22734AD6400FB4FEA /* VkLoginWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkLoginWebView.swift; sourceTree = "<group>"; };
 		0A4FE407273621FB00FB4FEA /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
+		0AD1F4C7274380D200DD0789 /* VkPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkPhoto.swift; sourceTree = "<group>"; };
 		0AE0A69F27394B7900EFE32B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0AE0A6A727394E7C00EFE32B /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		0AE0A6AA27394F0F00EFE32B /* MyVkGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVkGroup.swift; sourceTree = "<group>"; };
@@ -53,6 +73,9 @@
 		0AE0A6BF2739D94C00EFE32B /* testview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testview.swift; sourceTree = "<group>"; };
 		0AE0A6C8273A488000EFE32B /* Kingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kingfisher.swift; sourceTree = "<group>"; };
 		0AE0A6CB273A5EAD00EFE32B /* VkNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkNews.swift; sourceTree = "<group>"; };
+		0AE0A6D927408C4B00EFE32B /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		0AE7819127446F3C007000D7 /* LIkeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIkeButton.swift; sourceTree = "<group>"; };
+		0AE7819E2744C1C9007000D7 /* Bounce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bounce.swift; sourceTree = "<group>"; };
 		0AFBE485272E45D30091E61B /* SwiftUI TEST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI TEST.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AFBE488272E45D30091E61B /* SwiftUI_TESTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_TESTApp.swift; sourceTree = "<group>"; };
 		0AFBE48A272E45D30091E61B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -80,6 +103,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AE7819D2744B093007000D7 /* QGrid in Frameworks */,
+				0AE0A6D6273FAF9600EFE32B /* SwiftyJSON in Frameworks */,
 				0AE0A6C6273A432900EFE32B /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,8 +126,17 @@
 			children = (
 				0A4932DD272FEE2000390D09 /* FriendsModel.swift */,
 				0A4FE407273621FB00FB4FEA /* WebViewModel.swift */,
+				0AE0A6D927408C4B00EFE32B /* NewsViewModel.swift */,
 			);
 			path = "View Model";
+			sourceTree = "<group>";
+		};
+		0AD1F4C6274380B900DD0789 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				0AD1F4C7274380D200DD0789 /* VkPhoto.swift */,
+			);
+			path = Photos;
 			sourceTree = "<group>";
 		};
 		0AE0A69E27394B3A00EFE32B /* Services */ = {
@@ -117,6 +151,7 @@
 		0AE0A6A227394D4C00EFE32B /* VkModels */ = {
 			isa = PBXGroup;
 			children = (
+				0AD1F4C6274380B900DD0789 /* Photos */,
 				0AE0A6A527394DCF00EFE32B /* Friends */,
 				0AE0A6A427394DB800EFE32B /* Groups */,
 				0AE0A6A327394DAD00EFE32B /* News */,
@@ -238,9 +273,11 @@
 			children = (
 				0AFBE4AE272E47710091E61B /* Cell.swift */,
 				0AFBE4B1272E47850091E61B /* Photo.swift */,
+				0AE7819127446F3C007000D7 /* LIkeButton.swift */,
 				0AFBE4B4272E479E0091E61B /* Title.swift */,
 				0AFBE4B7272E47BD0091E61B /* SubTitle.swift */,
 				0AE0A6C8273A488000EFE32B /* Kingfisher.swift */,
+				0AE7819E2744C1C9007000D7 /* Bounce.swift */,
 			);
 			path = CellViewModifiers;
 			sourceTree = "<group>";
@@ -255,6 +292,7 @@
 				0AFBE481272E45D30091E61B /* Sources */,
 				0AFBE482272E45D30091E61B /* Frameworks */,
 				0AFBE483272E45D30091E61B /* Resources */,
+				0AE7819A2744ADE7007000D7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,6 +301,8 @@
 			name = "SwiftUI TEST";
 			packageProductDependencies = (
 				0AE0A6C5273A432900EFE32B /* Kingfisher */,
+				0AE0A6D5273FAF9600EFE32B /* SwiftyJSON */,
+				0AE7819C2744B093007000D7 /* QGrid */,
 			);
 			productName = "SwiftUI TEST";
 			productReference = 0AFBE485272E45D30091E61B /* SwiftUI TEST.app */;
@@ -293,6 +333,8 @@
 			mainGroup = 0AFBE47C272E45D30091E61B;
 			packageReferences = (
 				0AE0A6C4273A432900EFE32B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				0AE0A6D4273FAF9600EFE32B /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				0AE7819B2744B093007000D7 /* XCRemoteSwiftPackageReference "QGrid" */,
 			);
 			productRefGroup = 0AFBE486272E45D30091E61B /* Products */;
 			projectDirPath = "";
@@ -323,12 +365,14 @@
 				0AE0A6AE2739502300EFE32B /* Session.swift in Sources */,
 				0AE0A6CC273A5EAD00EFE32B /* VkNews.swift in Sources */,
 				0AFBE4C4272E48300091E61B /* GalleryCollectionViewCellPrototype.swift in Sources */,
+				0AE7819F2744C1C9007000D7 /* Bounce.swift in Sources */,
 				0AFBE4A9272E470C0091E61B /* GalleryView.swift in Sources */,
 				0AFBE4B8272E47BD0091E61B /* SubTitle.swift in Sources */,
 				0AE0A6C02739D94C00EFE32B /* testview.swift in Sources */,
 				0AFBE4BE272E47FD0091E61B /* GroupCellPrototype.swift in Sources */,
 				0AFBE49D272E46930091E61B /* LoginView.swift in Sources */,
 				0AE0A6A027394B7900EFE32B /* NetworkService.swift in Sources */,
+				0AE0A6DA27408C4B00EFE32B /* NewsViewModel.swift in Sources */,
 				0AFBE4B5272E479E0091E61B /* Title.swift in Sources */,
 				0AFBE4AC272E47360091E61B /* SearchGroupsView.swift in Sources */,
 				0A4FE408273621FB00FB4FEA /* WebViewModel.swift in Sources */,
@@ -336,12 +380,14 @@
 				0AFBE48B272E45D30091E61B /* MainView.swift in Sources */,
 				0AFBE4B2272E47850091E61B /* Photo.swift in Sources */,
 				0AE0A6A827394E7C00EFE32B /* Friend.swift in Sources */,
+				0AE7819227446F3C007000D7 /* LIkeButton.swift in Sources */,
 				0AE0A6C9273A488000EFE32B /* Kingfisher.swift in Sources */,
 				0A4FE3D32734AD6400FB4FEA /* VkLoginWebView.swift in Sources */,
 				0AFBE4A0272E46B60091E61B /* FriendsView.swift in Sources */,
 				0AFBE4AF272E47710091E61B /* Cell.swift in Sources */,
 				0A4FE3CA27349F1B00FB4FEA /* TabBarView.swift in Sources */,
 				0AFBE4BB272E47DF0091E61B /* UserCellPrototype.swift in Sources */,
+				0AD1F4C8274380D200DD0789 /* VkPhoto.swift in Sources */,
 				0AFBE4C1272E48120091E61B /* NewsCellPrototype.swift in Sources */,
 				0AFBE4A6272E46F20091E61B /* NewsView.swift in Sources */,
 				0A4932DB272FECC300390D09 /* SearchBar.swift in Sources */,
@@ -546,6 +592,22 @@
 				minimumVersion = 7.1.1;
 			};
 		};
+		0AE0A6D4273FAF9600EFE32B /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		0AE7819B2744B093007000D7 /* XCRemoteSwiftPackageReference "QGrid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Q-Mobile/QGrid.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -553,6 +615,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0AE0A6C4273A432900EFE32B /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		0AE0A6D5273FAF9600EFE32B /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0AE0A6D4273FAF9600EFE32B /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		0AE7819C2744B093007000D7 /* QGrid */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0AE7819B2744B093007000D7 /* XCRemoteSwiftPackageReference "QGrid" */;
+			productName = QGrid;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

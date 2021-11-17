@@ -1,99 +1,76 @@
-//
-//  VkNews.swift
-//  SwiftUI TEST
-//
-//  Created by Anna Delova on 11/9/21.
-//
+
 
 import Foundation
+import SwiftyJSON
 
-struct NewsResponse: Codable {
+struct VkItem: Identifiable {
 
-    let vKresponse: VkNews
-    enum CodingKeys: String, CodingKey {
-        case vKresponse = "response"
+    var id: Int
+    var text:String
+    var attachments: [Attachments]
+
+}
+extension VkItem {
+    init(_ json: JSON) {
+        self.id = json["source_id"].intValue
+        self.text = json["text"].stringValue
+        self.attachments = [Attachments]()
+        let attachmentsArray = json["attachments"].arrayValue
+        for attachmentsJson in attachmentsArray{
+            let value = Attachments(attachmentsJson)
+                attachments.append(value)
+            }
     }
 }
 
-struct VkNews: Codable {
-    let items: [VkItem]
-    let profiles: [VkProfile]
+struct Attachments {
+    var photo: VkPhoto
 
-    enum CodingKeys: String, CodingKey {
-        case items = "items"
-        case profiles = "profiles"
+    init(_ json: JSON) {
+        self.photo = VkPhoto(json["photo"])
     }
-}
-// Items
-struct VkItem: Codable, Identifiable {
 
-    let id: Int
-//    let date: Int
-    let text: String?
-//    let likes: Likes
-    let attachments: [Attachments]
-
-    enum CodingKeys: String, CodingKey {
-        case id = "source_id"
-//        case date = "date"
-        case text = "text"
-//        case likes = "likes"
-        case attachments = "atachments"
-    }
 }
 
-struct Attachments: Codable {
-    let photo: NewsPhoto
 
-    enum CodingKeys: String, CodingKey {
-        case photo = "photo"
+struct VkPhoto {
+    var sizes: [Sizes]
+    let owner_id: Int
 
+    init(_ json: JSON) {
+        self.sizes = [Sizes]()
+        let sizesArray = json["sizes"].arrayValue
+        for sizesJson in sizesArray{
+            let value = Sizes(sizesJson)
+                 sizes.append(value)
+             }
+        self.owner_id = json["owner_id"].intValue
     }
 }
-
-// Photos
-struct NewsPhoto: Codable {
-//    let id: Int
-    let sizes: [Sizes]
-
-    enum CodingKeys: String, CodingKey {
-//        case id = "owner_id"
-        case sizes = "sizes"
-    }
-}
-
-struct Sizes: Codable {
-    let url: String
+struct Sizes {
+    let url: String?
     let type: String
 
-    enum CodingKeys: String, CodingKey {
-        case url = "url"
-        case type = "type"
+    init(_ json: JSON) {
+        self.url = json["url"].stringValue
+        self.type =  json["type"].stringValue
     }
 }
 
-//struct Likes: Codable {
-//    let count: Int
-//}
-
-// Profiles
-
-struct VkProfile: Codable, Identifiable {
+struct VkProfile: Identifiable {
 
     let firstName: String
     let lastName: String
     let id: Int
     let photo100: String
+    var fullName: String { "\(firstName) \(lastName)" }
 
-    var fullName: String {
-        "\(firstName) \(lastName)"
+}
+extension VkProfile {
+    init(_ json: JSON) {
+        self.firstName = json["first_name"].stringValue
+        self.lastName = json["last_name"].stringValue
+        self.id = json["id"].intValue
+        self.photo100 = json["photo_100"].stringValue
     }
-
-    enum CodingKeys: String, CodingKey {
-        case firstName = "first_name"
-        case lastName = "last_name"
-        case photo100 = "photo_100"
-        case id = "id"
-    }
-
 }
